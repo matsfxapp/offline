@@ -3,5 +3,5 @@ services:
     build: .
     container_name: matoffline
     ports:
-      - "${PORT}:80"
+      - "${PORT}:8801"
     restart: unless-stopped
