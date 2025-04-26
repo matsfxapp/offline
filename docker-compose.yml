@@ -1,9 +1,7 @@
 services:
   web:
-    image: nginx:latest
+    build: .
     container_name: matoffline
     ports:
       - "${PORT}:80"
-    volumes:
-      - .:/usr/share/nginx/html:ro
     restart: unless-stopped
