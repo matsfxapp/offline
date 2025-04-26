@@ -1,0 +1,11 @@
+
+services:
+  web:
+    image: nginx:latest
+    container_name: matsfx-homepage
+    ports:
+      - "${PORT}:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - .:/usr/share/nginx/html:ro
+    restart: unless-stopped

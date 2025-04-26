@@ -1,0 +1,233 @@
+@font-face {
+    font-family: 'inter';
+    src: url('../fonts/inter.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'draw';
+    src: url('../fonts/draw.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+:root {
+    --font-1: 'inter', sans-serif;
+    --font-2: 'draw', sans-serif;
+    --bg-gradiant-1: #060912;
+    --bg-gradient-2: #1d283f;
+    --bg-header: #111827;
+    --bg-card: #111827;
+    --bg-btn: #425786;
+    --white-text: #ffffff;
+    --lighter-text: #8290a4;
+    --border: 2px solid #1F2937;
+    --border-radius: 25px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom, var(--bg-gradiant-1), var(--bg-gradient-2));
+    min-height: 100vh;
+    font-family: var(--font-1);
+    color: var(--white-text);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--bg-btn);
+    font-family: var(--font-1);
+    text-decoration: none;
+}
+
+.blog-container {
+    max-width: 800px;
+    margin: 8rem auto 2rem auto;
+    padding: 0 1rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.blog-post {
+    background-color: var(--bg-card);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-post::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--bg-btn), #6d8ac7);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.blog-post:hover::before {
+    opacity: 1;
+}
+
+.markdown-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.markdown-content h1 {
+    font-size: 2.5rem;
+    margin: 1.5rem 0;
+    color: var(--white-text);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.markdown-content h2 {
+    font-size: 2rem;
+    margin: 1.2rem 0;
+    color: var(--white-text);
+}
+
+.markdown-content p {
+    margin: 1rem 0;
+    color: var(--lighter-text);
+}
+
+.markdown-content code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
+}
+
+.markdown-content pre {
+    background: #1a1a1a;
+    padding: 1rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 1rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--lighter-text);
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.blog-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--bg-card);
+    color: var(--white-text);
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    transform: translateY(150%);
+    transition: var(--transition);
+    z-index: 1000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.toast.show {
+    transform: translateY(0);
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--lighter-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.loading::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--lighter-text);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.button {
+    background-color: var(--bg-btn);
+    border: none;
+    border-radius: var(--border-radius);
+    width: 150px;
+    height: 50px;
+    font-family: var(--font-1);
+    color: var(--lighter-text);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .blog-post {
+        padding: 1.5rem;
+    }
+
+    .markdown-content h1 {
+        font-size: 2rem;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .toast {
+        display: none;
+    }
+
+    .blog-post {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}

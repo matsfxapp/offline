@@ -1,0 +1,67 @@
+/* === Info Section === */
+.info-section {
+    position: relative;
+    width: 100%;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-section-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-one, .info-two {
+    position: relative;
+    width: 100%;
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius);
+    border: var(--border);
+    overflow: hidden;
+    padding-bottom: 56.25%;
+}
+
+.info-text-one, .info-text-two {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white-text);
+    font-family: var(--font-1);
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+}
+
+.info-one img, .info-two img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+    transition: var(--transition);
+}
+
+.info-one img:hover, .info-two img:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 768px) {
+    .info-section-inner {
+        flex-direction: row;
+    }
+    
+    .info-one, .info-two {
+        width: 48%;
+    }
+}

@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'inter';
+   src: url('/fonts/inter.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+   }
+@font-face {
+   font-family: 'draw';
+   src: url('/fonts/draw.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+/* Base styles */
+:root {
+    /* font */ 
+    --font-1: 'inter', sans-serif;
+    --font-2: 'draw', sans-serif;
+
+    /* background */
+    --bg-gradiant-1: #060912;
+    --bg-gradient-2: #1d283f;
+    --bg-header: #111827;
+    --bg-card: #111827;
+    --bg-btn: #425786;
+
+    /* text */
+    --white-text: #ffffff;
+    --lighter-text: #8290a4;
+
+    /* border */
+    --border: 2px solid #1F2937;
+    --border-radius: 25px;
+
+    /* other */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+    
+    /* spacing variables for consistent padding/margins */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(to bottom, var(--bg-gradiant-1), var(--bg-gradient-2));
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-bottom: 5rem;
+}
+
+/* common container */
+.section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    position: relative;
+}

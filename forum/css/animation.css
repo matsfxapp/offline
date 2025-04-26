@@ -1,0 +1,95 @@
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-fade-in-delay {
+    animation: fadeIn 0.5s ease-in-out 0.2s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.animate-fade-in-delay-longer {
+    animation: fadeIn 0.5s ease-in-out 0.4s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out 0.6s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.animate-slide-down {
+    animation: slideDown 0.5s ease-out;
+}
+
+.animate-slide-right {
+    animation: slideRight 0.4s ease-out;
+}
+
+.animate-pulse-hover {
+    transition: transform 0.2s ease;
+}
+
+.animate-pulse-hover:hover {
+    transform: scale(1.05);
+}
+
+.animate-slide-left-hover {
+    transition: transform 0.3s ease;
+}
+
+.animate-slide-left-hover:hover {
+    transform: translateX(-5px);
+}
+
+.animate-slide-right-hover {
+    transition: transform 0.3s ease;
+}
+
+.animate-slide-right-hover:hover {
+    transform: translateX(5px);
+}
+
+@keyframes fadeIn {
+    from {
+    opacity: 0;
+    }
+    to {
+    opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+    opacity: 0;
+    transform: translateY(20px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+    opacity: 0;
+    transform: translateY(-20px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+    opacity: 0;
+    transform: translateX(-15px);
+    }
+    to {
+    opacity: 1;
+    transform: translateX(0);
+    }
+}

@@ -1,0 +1,41 @@
+/* === Socials Section === */
+.socials {
+    position: relative;
+    background-color: var(--bg-card);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.socials a {
+    display: inline-block;
+}
+
+.socials img {
+    height: 50px;
+    width: 50px;
+    transition: var(--transition);
+}
+
+.socials img:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+@media (min-width: 992px) {
+    .socials {
+        gap: 3rem;
+    }
+    
+    .socials img {
+        height: 70px;
+        width: 70px;
+    }
+}

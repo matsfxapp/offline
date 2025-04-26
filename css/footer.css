@@ -1,0 +1,37 @@
+/* === Footer === */
+.footer {
+    width: 90%;
+    max-width: 1200px;
+    margin: 3rem auto 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer-legal {
+    font-family: var(--font-1);
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.footer-legal a {
+    color: var(--lighter-text);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-legal a:hover {
+    color: var(--white-text);
+}
+
+.footer-copy {
+    font-family: var(--font-1);
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    color: var(--lighter-text);
+    text-align: center;
+}

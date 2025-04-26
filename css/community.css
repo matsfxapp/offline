@@ -1,0 +1,124 @@
+/* === Community Section === */
+.community {
+    position: relative;
+    background-color: var(--bg-card);
+    width: 90%;
+    max-width: 1200px;
+    margin: 3rem auto;
+    border-radius: 30px;
+    border: var(--border);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: slideIn 1.5s ease-out;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.mute-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.mute-button:hover {
+    transform: scale(1.2) rotate(-20deg);
+}
+
+.mute-button svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+.community-text {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+.community-text-title, .community-text-description, .community-love-you {
+    font-family: var(--font-1);
+    color: var(--lighter-text);
+    margin-bottom: 1rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+.community-btn {
+    display: inline-block;
+    margin: 0 auto;
+    background-color: #111827;
+    padding: 1rem 2rem;
+    width: fit-content;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    font-family: var(--font-1);
+    color: var(--lighter-text);
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.25rem;
+    transition: var(--transition);
+}
+
+.community-btn:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+@media (min-width: 768px) {
+    .community {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    
+    .video-container {
+        width: 60%;
+    }
+    
+    .community-text {
+        width: 35%;
+        text-align: left;
+    }
+    
+    .community-btn {
+        margin-left: auto;
+        margin-right: 2rem;
+    }
+}

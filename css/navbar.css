@@ -1,0 +1,99 @@
+/* === Navbar === */
+.navbar {
+    font-family: var(--font-1);
+    position: fixed;
+    background: var(--bg-header);
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    top: 0;
+    left: 50%;
+    border-radius: var(--border-radius);
+    border: var(--border);
+    transform: translateX(-50%) translateY(25px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo-image {
+    width: 40px;
+    height: auto;
+    transition: var(--transition);
+}
+
+.nav-logo:hover {
+    transform: rotate(5deg);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: var(--lighter-text);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--white-text);
+    transform: scale(1.1);
+}
+
+.nav-button a {
+    background-color: var(--bg-btn);
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 15px;
+    color: var(--lighter-text);
+    font-size: 0.9rem;
+    transition: var(--transition);
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.nav-button a:hover {
+    background-color: var(--white-text);
+    color: var(--bg-header);
+}
+
+.nav-site-name {
+    color: var(--lighter-text);
+    font-size: 1rem;
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+@media (max-width: 1199px) {
+    .nav-site-name {
+        display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        padding: 1rem 2rem;
+        display: flex;
+    }
+    
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+    
+    .nav-button a {
+        padding: 0.7rem 2rem;
+        font-size: 1.1rem;
+    }
+}
